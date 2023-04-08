@@ -1,0 +1,23 @@
+? May JHipster anonymously report usage statistics to improve the tool over time? No
+? Which *type* of application would you like to create? Monolithic application (recommended for simple projects)
+? What is the base name of your application? coopcycle
+? Do you want to make it reactive with Spring WebFlux? Yes
+? What is your default Java package name? coopcycle
+? Which *type* of authentication would you like to use? JWT authentication (stateless, with a token)
+? Which *type* of database would you like to use? SQL (H2, PostgreSQL, MySQL, MariaDB, MSSQL)
+? Which *production* database would you like to use? PostgreSQL
+? Which *development* database would you like to use? PostgreSQL
+? Would you like to use Maven or Gradle for building the backend? Maven
+? Do you want to use the JHipster Registry to configure, monitor and scale your application? No
+? Which other technologies would you like to use? 
+? Which *Framework* would you like to use for the client? Angular
+? Do you want to generate the admin UI? Yes
+? Would you like to use a Bootswatch theme (https://bootswatch.com/)? Default JHipster
+? Would you like to enable internationalization support? Yes
+? Please choose the native language of the application French
+? Please choose additional languages to install 
+? Besides JUnit and Jest, which testing frameworks would you like to use? (Press <space> to select, <a> to toggle all, <i> to invert selection, and <enter> to proceed)
+❯◯ Cypress
+ ◯ [DEPRECATED] Protractor
+ ◯ Gatling
+ ◯ Cucumber
