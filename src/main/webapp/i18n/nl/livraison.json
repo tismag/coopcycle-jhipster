@@ -1,0 +1,27 @@
+{
+  "coopcycleApp": {
+    "livraison": {
+      "home": {
+        "title": "Livraisons",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Maak een nieuwe Livraison",
+        "createOrEditLabel": "Maak of wijzig een Livraison",
+        "notFound": "No Livraisons found"
+      },
+      "created": "A new Livraison is created with identifier {{ param }}",
+      "updated": "A Livraison is updated with identifier {{ param }}",
+      "deleted": "A Livraison is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Bent u zeker dat u Livraison {{ id }} wilt verwijderen?"
+      },
+      "detail": {
+        "title": "Livraison"
+      },
+      "id": "ID",
+      "idLivraison": "Id Livraison",
+      "contenu": "Contenu",
+      "quantite": "Quantite",
+      "livreur": "Livreur"
+    }
+  }
+}

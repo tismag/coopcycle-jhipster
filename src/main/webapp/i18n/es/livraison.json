@@ -1,0 +1,27 @@
+{
+  "coopcycleApp": {
+    "livraison": {
+      "home": {
+        "title": "Livraisons",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Livraison",
+        "createOrEditLabel": "Crear o editar Livraison",
+        "notFound": "Ningún Livraisons encontrado"
+      },
+      "created": "Un nuevo Livraison ha sido creado con el identificador {{ param }}",
+      "updated": "Un Livraison ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Livraison ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Livraison {{ id }}?"
+      },
+      "detail": {
+        "title": "Livraison"
+      },
+      "id": "ID",
+      "idLivraison": "Id Livraison",
+      "contenu": "Contenu",
+      "quantite": "Quantite",
+      "livreur": "Livreur"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "applications": "*",
+  "changelogDate": "20230409065702",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "cooperative",
+  "fields": [
+    {
+      "fieldName": "idCooperative",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "nom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "numeroTel",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "adresse",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Cooperative",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "commercant",
+      "otherEntityRelationshipName": "idCommercant",
+      "ownerSide": false,
+      "relationshipName": "idCooperative",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

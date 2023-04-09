@@ -1,0 +1,35 @@
+{
+  "applications": "*",
+  "changelogDate": "20230409065703",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "livraison",
+  "fields": [
+    {
+      "fieldName": "idLivraison",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "contenu",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "quantite",
+      "fieldType": "Long"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Livraison",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "livreur",
+      "otherEntityRelationshipName": "idLivreur",
+      "relationshipName": "livreur",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

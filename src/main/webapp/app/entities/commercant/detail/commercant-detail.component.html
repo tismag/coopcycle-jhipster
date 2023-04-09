@@ -1,0 +1,63 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="commercant">
+      <h2 data-cy="commercantDetailsHeading"><span jhiTranslate="coopcycleApp.commercant.detail.title">Commercant</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ commercant.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.commercant.idCommercant">Id Commercant</span></dt>
+        <dd>
+          <span>{{ commercant.idCommercant }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.commercant.nom">Nom</span></dt>
+        <dd>
+          <span>{{ commercant.nom }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.commercant.prenom">Prenom</span></dt>
+        <dd>
+          <span>{{ commercant.prenom }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.commercant.email">Email</span></dt>
+        <dd>
+          <span>{{ commercant.email }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.commercant.numeroTel">Numero Tel</span></dt>
+        <dd>
+          <span>{{ commercant.numeroTel }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.commercant.nomEtablissement">Nom Etablissement</span></dt>
+        <dd>
+          <span>{{ commercant.nomEtablissement }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.commercant.adresse">Adresse</span></dt>
+        <dd>
+          <span>{{ commercant.adresse }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.commercant.idCommercant">Id Commercant</span></dt>
+        <dd>
+          <span *ngFor="let idCommercant of commercant.idCommercants; let last = last">
+            <a [routerLink]="['/cooperative', idCommercant.id, 'view']">{{ idCommercant.id }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Retour</span>
+      </button>
+
+      <button type="button" [routerLink]="['/commercant', commercant.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editer</span>
+      </button>
+    </div>
+  </div>
+</div>

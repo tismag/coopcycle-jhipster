@@ -1,0 +1,52 @@
+{
+  "applications": "*",
+  "changelogDate": "20230409065700",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "livreur",
+  "fields": [
+    {
+      "fieldName": "idLivreur",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "nom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prenom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "numeroTel",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cooperative",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Livreur",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "livraison",
+      "otherEntityRelationshipName": "livreur",
+      "relationshipName": "idLivreur",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "cooperative",
+      "relationshipName": "cooperative",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

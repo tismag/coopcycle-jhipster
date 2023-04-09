@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="livreur">
+      <h2 data-cy="livreurDetailsHeading"><span jhiTranslate="coopcycleApp.livreur.detail.title">Livreur</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ livreur.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.livreur.idLivreur">Id Livreur</span></dt>
+        <dd>
+          <span>{{ livreur.idLivreur }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.livreur.nom">Nom</span></dt>
+        <dd>
+          <span>{{ livreur.nom }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.livreur.prenom">Prenom</span></dt>
+        <dd>
+          <span>{{ livreur.prenom }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.livreur.email">Email</span></dt>
+        <dd>
+          <span>{{ livreur.email }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.livreur.numeroTel">Numero Tel</span></dt>
+        <dd>
+          <span>{{ livreur.numeroTel }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.livreur.cooperative">Cooperative</span></dt>
+        <dd>
+          <span>{{ livreur.cooperative }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.livreur.cooperative">Cooperative</span></dt>
+        <dd>
+          <div *ngIf="livreur.cooperative">
+            <a [routerLink]="['/cooperative', livreur.cooperative.id, 'view']">{{ livreur.cooperative.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Retour</span>
+      </button>
+
+      <button type="button" [routerLink]="['/livreur', livreur.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editer</span>
+      </button>
+    </div>
+  </div>
+</div>

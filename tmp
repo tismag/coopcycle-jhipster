@@ -21,3 +21,16 @@
  ◯ [DEPRECATED] Protractor
  ◯ Gatling
  ◯ Cucumber
+
+
+ If you find JHipster useful consider sponsoring the project https://www.jhipster.tech/sponsors/
+
+Server application generated successfully.
+
+Run your Spring Boot application:
+./mvnw
+
+Client application generated successfully.
+
+Start your Webpack development server with:
+ npm start

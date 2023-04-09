@@ -1,0 +1,142 @@
+<div>
+  <h2 id="page-heading" data-cy="CommercantHeading">
+    <span jhiTranslate="coopcycleApp.commercant.home.title">Commercants</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="coopcycleApp.commercant.home.refreshListLabel">Actualiser la liste</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-commercant"
+        [routerLink]="['/commercant/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="coopcycleApp.commercant.home.createLabel"> Créer un nouveau Commercant </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="commercants?.length === 0">
+    <span jhiTranslate="coopcycleApp.commercant.home.notFound">Aucun Commercant trouvé</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="commercants && commercants.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="idCommercant">
+            <div class="d-flex">
+              <span jhiTranslate="coopcycleApp.commercant.idCommercant">Id Commercant</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="nom">
+            <div class="d-flex">
+              <span jhiTranslate="coopcycleApp.commercant.nom">Nom</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="prenom">
+            <div class="d-flex">
+              <span jhiTranslate="coopcycleApp.commercant.prenom">Prenom</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="email">
+            <div class="d-flex">
+              <span jhiTranslate="coopcycleApp.commercant.email">Email</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="numeroTel">
+            <div class="d-flex">
+              <span jhiTranslate="coopcycleApp.commercant.numeroTel">Numero Tel</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="nomEtablissement">
+            <div class="d-flex">
+              <span jhiTranslate="coopcycleApp.commercant.nomEtablissement">Nom Etablissement</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="adresse">
+            <div class="d-flex">
+              <span jhiTranslate="coopcycleApp.commercant.adresse">Adresse</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="idCommercant.id">
+            <div class="d-flex">
+              <span jhiTranslate="coopcycleApp.commercant.idCommercant">Id Commercant</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let commercant of commercants; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/commercant', commercant.id, 'view']">{{ commercant.id }}</a>
+          </td>
+          <td>{{ commercant.idCommercant }}</td>
+          <td>{{ commercant.nom }}</td>
+          <td>{{ commercant.prenom }}</td>
+          <td>{{ commercant.email }}</td>
+          <td>{{ commercant.numeroTel }}</td>
+          <td>{{ commercant.nomEtablissement }}</td>
+          <td>{{ commercant.adresse }}</td>
+          <td>
+            <span *ngFor="let idCommercant of commercant.idCommercants; let last = last">
+              <a class="form-control-static" [routerLink]="['/cooperative', idCommercant.id, 'view']">{{ idCommercant.id }}</a
+              >{{ last ? '' : ', ' }}
+            </span>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/commercant', commercant.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">Voir</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/commercant', commercant.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Editer</span>
+              </button>
+
+              <button type="submit" (click)="delete(commercant)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Supprimer</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+{
+  "coopcycleApp": {
+    "commercant": {
+      "home": {
+        "title": "Commercants",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Commercant",
+        "createOrEditLabel": "Create or edit a Commercant",
+        "notFound": "No Commercants found"
+      },
+      "created": "A new Commercant is created with identifier {{ param }}",
+      "updated": "A Commercant is updated with identifier {{ param }}",
+      "deleted": "A Commercant is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Commercant {{ id }}?"
+      },
+      "detail": {
+        "title": "Commercant"
+      },
+      "id": "ID",
+      "idCommercant": "Id Commercant",
+      "nom": "Nom",
+      "prenom": "Prenom",
+      "email": "Email",
+      "numeroTel": "Numero Tel",
+      "nomEtablissement": "Nom Etablissement",
+      "adresse": "Adresse",
+      "idCommercant": "Id Commercant"
+    }
+  }
+}

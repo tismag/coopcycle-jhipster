@@ -1,0 +1,31 @@
+{
+  "coopcycleApp": {
+    "commercant": {
+      "home": {
+        "title": "Commercants",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый Commercant",
+        "createOrEditLabel": "Создать или отредактировать Commercant",
+        "notFound": "Commercants не найдено"
+      },
+      "created": "Новый Commercant создан с идентификатором {{ param }}",
+      "updated": "Commercant обновлен с идентификатором {{ param }}",
+      "deleted": "Commercant удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Commercant {{ id }}?"
+      },
+      "detail": {
+        "title": "Commercant"
+      },
+      "id": "ID",
+      "idCommercant": "Id Commercant",
+      "nom": "Nom",
+      "prenom": "Prenom",
+      "email": "Email",
+      "numeroTel": "Numero Tel",
+      "nomEtablissement": "Nom Etablissement",
+      "adresse": "Adresse",
+      "idCommercant": "Id Commercant"
+    }
+  }
+}

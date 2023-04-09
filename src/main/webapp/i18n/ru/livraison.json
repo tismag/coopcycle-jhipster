@@ -1,0 +1,27 @@
+{
+  "coopcycleApp": {
+    "livraison": {
+      "home": {
+        "title": "Livraisons",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый Livraison",
+        "createOrEditLabel": "Создать или отредактировать Livraison",
+        "notFound": "Livraisons не найдено"
+      },
+      "created": "Новый Livraison создан с идентификатором {{ param }}",
+      "updated": "Livraison обновлен с идентификатором {{ param }}",
+      "deleted": "Livraison удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Livraison {{ id }}?"
+      },
+      "detail": {
+        "title": "Livraison"
+      },
+      "id": "ID",
+      "idLivraison": "Id Livraison",
+      "contenu": "Contenu",
+      "quantite": "Quantite",
+      "livreur": "Livreur"
+    }
+  }
+}

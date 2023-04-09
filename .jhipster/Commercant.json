@@ -1,0 +1,52 @@
+{
+  "applications": "*",
+  "changelogDate": "20230409065701",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "commercant",
+  "fields": [
+    {
+      "fieldName": "idCommercant",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "nom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prenom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "numeroTel",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nomEtablissement",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "adresse",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Commercant",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "cooperative",
+      "otherEntityRelationshipName": "idCooperative",
+      "ownerSide": true,
+      "relationshipName": "idCommercant",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

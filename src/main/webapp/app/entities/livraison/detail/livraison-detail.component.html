@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="livraison">
+      <h2 data-cy="livraisonDetailsHeading"><span jhiTranslate="coopcycleApp.livraison.detail.title">Livraison</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ livraison.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.livraison.idLivraison">Id Livraison</span></dt>
+        <dd>
+          <span>{{ livraison.idLivraison }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.livraison.contenu">Contenu</span></dt>
+        <dd>
+          <span>{{ livraison.contenu }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.livraison.quantite">Quantite</span></dt>
+        <dd>
+          <span>{{ livraison.quantite }}</span>
+        </dd>
+        <dt><span jhiTranslate="coopcycleApp.livraison.livreur">Livreur</span></dt>
+        <dd>
+          <div *ngIf="livraison.livreur">
+            <a [routerLink]="['/livreur', livraison.livreur.id, 'view']">{{ livraison.livreur.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Retour</span>
+      </button>
+
+      <button type="button" [routerLink]="['/livraison', livraison.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editer</span>
+      </button>
+    </div>
+  </div>
+</div>

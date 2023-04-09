@@ -1,0 +1,48 @@
+
+entity Livreur {
+	idLivreur Long,
+    nom String,
+    prenom String,
+    email String,
+	numeroTel String,
+    cooperative String
+}
+
+entity Commercant {
+	idCommercant Long,
+    nom String,
+    prenom String,
+    email String,
+	numeroTel String,
+    nomEtablissement String,
+    adresse String
+}
+
+entity Cooperative {
+	idCooperative Long,
+	nom String,
+    email String,
+	numeroTel String,
+	adresse String
+}
+
+entity Livraison {
+	idLivraison Long,
+	contenu String,
+    quantite Long
+}
+
+relationship ManyToMany {
+	Commercant{idCommercant} to Cooperative{idCooperative}
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Livreur{idLivreur} to Livraison,
+}
+
+relationship ManyToOne {
+	Livreur{cooperative} to Cooperative,
+}
+
+dto * with mapstruct
